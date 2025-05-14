@@ -1,22 +1,18 @@
+"use client"
+
 import type React from "react"
-import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import { CartProvider } from "@/hooks/use-cart"
 import { WishlistProvider } from "@/hooks/use-wishlist"
-import { ToastProvider } from "@/components/toast-provider"
+import { ToastProvider } from "@/hooks/use-toast"
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
-  title: "PureBliss Coco - Premium Coconut Oil Products",
-  description: "Discover the finest coconut oil products for your skin, hair, and health at PureBliss Coco.",
-}
-
-export default function RootLayout({
+export default function ClientLayout({
   children,
 }: {
   children: React.ReactNode
@@ -33,6 +29,7 @@ export default function RootLayout({
                   <main className="flex-1">{children}</main>
                   <Footer />
                 </div>
+                <Toaster />
               </WishlistProvider>
             </CartProvider>
           </ToastProvider>

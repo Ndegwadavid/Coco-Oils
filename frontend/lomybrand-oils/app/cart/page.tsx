@@ -31,7 +31,7 @@ export default function CartPage() {
         <div className="max-w-md mx-auto">
           <ShoppingBag className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
           <h1 className="text-2xl font-bold mb-2">Your cart is empty</h1>
-          <p className="text-muted-foreground mb-8">Looks like you haven't added any products to your cart yet.</p>
+          <p className="text-muted-foreground mb-8">Looks like you haven&apos;t added any products to your cart yet.</p>
           <Button asChild>
             <Link href="/shop">Continue Shopping</Link>
           </Button>

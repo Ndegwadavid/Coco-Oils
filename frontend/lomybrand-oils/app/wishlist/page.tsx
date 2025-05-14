@@ -5,26 +5,15 @@ import Link from "next/link"
 import { useWishlist } from "@/hooks/use-wishlist"
 import { useCart } from "@/hooks/use-cart"
 import { Button } from "@/components/ui/button"
-import { Heart, ShoppingCart, Trash2 } from 'lucide-react'
-import { useToast } from "@/hooks/use-toast" // Changed from import { toast }
-
-// Define Product interface
-interface Product {
-  id: string
-  name: string
-  price: number
-  image: string
-  quantity: string
-  category: string
-  [key: string]: any // For any additional properties
-}
+import { Heart, ShoppingCart, Trash2 } from "lucide-react"
+import { toast } from "@/hooks/use-toast"
+import type { Product } from "@/types/product"
 
 export default function WishlistPage() {
   const { wishlist, removeFromWishlist, clearWishlist } = useWishlist()
   const { addToCart } = useCart()
-  const { toast } = useToast() // Get toast function from useToast hook
 
-  const handleAddToCart = (product: Product) => { // Added type annotation
+  const handleAddToCart = (product: Product) => {
     addToCart({ ...product, quantity: 1 })
     toast({
       title: "Added to cart",
@@ -61,7 +50,7 @@ export default function WishlistPage() {
           <div key={product.id} className="group relative border rounded-lg overflow-hidden flex flex-col">
             <div className="relative aspect-square bg-muted">
               <Image
-                src={product.image || "/assets/placeholder.jpg"}
+                src={product.image || "/placeholder.svg"}
                 alt={product.name}
                 fill
                 className="object-cover transition-transform group-hover:scale-105"
@@ -83,7 +72,7 @@ export default function WishlistPage() {
               <p className="text-sm text-muted-foreground mb-2">{product.quantity}</p>
               <p className="font-semibold mb-4">Ksh {product.price.toLocaleString()}</p>
 
-              <Button className="mt-auto" onClick={() => handleAddToCart({ ...product, quantity: product.quantity || "1", category: product.category || "Uncategorized" })}>
+              <Button className="mt-auto" onClick={() => handleAddToCart({ ...product, description: "", category: "", quantity: 1 })}>
                 <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart
               </Button>
             </div>

@@ -1,28 +1,26 @@
-// components/footer.tsx
+import type React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, PhoneIcon as WhatsApp } from 'lucide-react'
+import { Facebook, Instagram, Mail, Phone, MapPin, PhoneIcon as WhatsApp } from "lucide-react"
 
 // Custom TikTok icon since it's not in Lucide
-interface CustomTiktokIconProps extends React.SVGProps<SVGSVGElement> {}
-
-function CustomTiktokIcon(props: CustomTiktokIconProps) {
-    return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            {...props}
-        >
-            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
-        </svg>
-    )
+function CustomTiktokIcon(props: React.SVGAttributes<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
+  )
 }
 
 export default function Footer() {
@@ -39,13 +37,28 @@ export default function Footer() {
             </Link>
             <p className="text-muted-foreground mb-4">Premium coconut oil products for your skin, hair, and health.</p>
             <div className="flex space-x-4">
-              <Link href="https://facebook.com/PureBliss Coco" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <Link
+                href="https://facebook.com/PureBliss Coco"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
                 <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
               </Link>
-              <Link href="https://instagram.com/purebliss_coco" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <Link
+                href="https://instagram.com/purebliss_coco"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
                 <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
               </Link>
-              <Link href="https://tiktok.com/@purebliss_coco" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <Link
+                href="https://tiktok.com/@purebliss_coco"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+              >
                 <CustomTiktokIcon className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
               </Link>
               <Link href="https://wa.me/254721144888" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
@@ -126,9 +139,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-2 mt-0.5 text-muted-foreground" />
-                <span className="text-muted-foreground">
-                  P.O. Box 00600, Ngara Road, Nairobi, Kenya
-                </span>
+                <span className="text-muted-foreground">P.O. Box 00600, Ngara Road, Nairobi, Kenya</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-2 text-muted-foreground" />
@@ -138,21 +149,45 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <WhatsApp className="h-5 w-5 mr-2 text-muted-foreground" />
-                <Link href="https://wa.me/254721144888" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="https://wa.me/254721144888"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   WhatsApp Channel: PureBliss Coco
                 </Link>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-muted-foreground" />
-                <Link href="mailto:pureblisscoco@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="mailto:pureblisscoco@gmail.com"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   pureblisscoco@gmail.com
                 </Link>
               </li>
               <li className="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 mr-2 text-muted-foreground">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-5 w-5 mr-2 text-muted-foreground"
+                >
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
                 </svg>
-                <Link href="https://www.lomybrandoils.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="https://www.lomybrandoils.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   www.lomybrandoils.com
                 </Link>
               </li>
